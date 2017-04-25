@@ -1,0 +1,13 @@
+{
+    "name": "webdmg/casting",
+    "description": "application for updating and sharing a podcast",
+    "require": {
+        "webdmg/system-c":"0.1.2"
+    },
+    "authors": [
+        {
+            "name": "webdmg",
+            "email": "info@webdmg.com"
+        }
+    ]
+}
