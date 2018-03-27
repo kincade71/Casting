@@ -34,3 +34,5 @@ Temporary Items
 
 composer.lock
 .idea/
+.htaccess
+application/config/database.php
