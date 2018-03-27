@@ -18,5 +18,31 @@ class Read extends CI_Model{
     }
     return $data;
   }
+  
+  public function latestSeason(){
+	  
+	$this->db->select_max('season');
+	$query = $this->db->get('cast');
+	//echo $this->db->last_query();
+	foreach ($query->result() as $row)
+	{
+	        $data = $row->season;
+	}
+    return $data;
+  }
+  
+  public function latestEpisode(){
+	$season = $this->latestSeason();
+	
+	$this->db->where('season',$season);
+	$this->db->select_max('episode');
+	$query = $this->db->get('cast');
+	//echo $this->db->last_query();
+	foreach ($query->result() as $row)
+	{
+	        $data = $row->episode + 1;
+	}
+    return $data;
+  }
 
 }

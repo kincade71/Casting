@@ -27,12 +27,24 @@
 
           <div class="form-group">
             <label for="exampleInputEmail1">Keywords</label>
-            <input type="text" class="form-control" name="keywords" placeholder="me,you,they,us"/>
+            <input type="text" class="form-control" name="keywords" value="Higher Way Suffolk, HWS, higher way ministries, Suffolk, Higher Way Ministries" placeholder="me,you,they,us"/>
           </div>
 
           <div class="form-group">
             <label for="exampleInputEmail1">Date</label>
             <input type="text" class="form-control" id="datepicker" name="Date" placeholder="The date recorded."/>
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Season</label>
+            <input type="text" class="form-control" name="season" value="<?= $season ?>" placeholder="<?= $season ?>"/>
+            <span class="help-block">Must be updated manually when starting a new season.</span> 
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Episode</label>
+            <input type="text" class="form-control" name="episode" value="<?= $episode ?>" placeholder="<?= $episode ?>"/>
+            <span class="help-block">Auto Increments Episode by 1 </span> 
           </div>
 
           <div class="select">
@@ -44,7 +56,7 @@
               <option value="yes">yes</option>
             </select>
           </div>
-
+		  
           <div class="form-group">
             <label for="exampleInputEmail1">Summary</label>
             <textarea class="form-control" name="summary" rows="3"></textarea>

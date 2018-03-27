@@ -31,6 +31,8 @@ class Cast extends CI_Controller {
 		$data['projectname'] = 'WEBDMG';
 		$data['main_content'] = 'casting';
 		$data['status'] = $this->uri->segment(2);
+		$data['season'] = $this->read->latestSeason();
+		$data['episode'] = $this->read->latestEpisode();
 		$this->load->view('main/main_template',$data);
 	}
 
