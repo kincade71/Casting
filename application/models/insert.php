@@ -25,6 +25,8 @@ class Insert extends CI_Model{
       "keywords" => $formdata['keywords'],
       "Date" => date('D, d M  Y',strtotime($formdata['Date'])).' 00:00:00',
       "explicit" => $formdata['explicit'],
+      "season" => $formdata['season'],
+      "episode" => $formdata['episode'],
     );
   }
 }
