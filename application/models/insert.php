@@ -27,6 +27,7 @@ class Insert extends CI_Model{
       "explicit" => $formdata['explicit'],
       "season" => $formdata['season'],
       "episode" => $formdata['episode'],
+      "episodeType" => $formdata['episodeType'],
     );
   }
 }

@@ -1,4 +1,3 @@
-
 <br/><br/><br/>
 <?php if(count($feed) > 0){?>
     <div class="container" >
@@ -15,7 +14,16 @@
         <div class="col-md-2"></div>
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="well well-small col-md-5 ">
-        <h1 class="pull-right">Edit Episode</h1><br/><br/><br/>
+        <h1 class="pull-right">
+	        <?php if(is_array($edit)){?>
+	        
+	        <?= 'Editing: '.$edit[0]['title'] ?>
+	        
+	        <?php }else{ ?>
+	        
+		        Edit Episode
+	        <?php } ?>
+	        </h1><br/><br/><br/>
         <form action="<?= base_url()?>feed/updatetrack" method="post" accept-charset="utf-8" enctype="multipart/form-data">
           <?= (isset($errors))?$errors:null ?>
 
@@ -38,12 +46,33 @@
             <label for="exampleInputEmail1">Date</label>
             <input type="text" class="form-control" id="datepicker" name="Date" placeholder="The date recorded." value="<?= $edit[0]['Date'] ?>"/>
           </div>
-
-          <div class="select">
+		  
+		  <div class="form-group">
+            <label for="exampleInputEmail1">Season</label>
+            <input type="text" class="form-control" disabled="disabled" name="season" value="<?= $edit[0]['season'] ?>" placeholder="<?= $$edit[0]['season'] ?>"/>
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Episode</label>
+            <input type="text" class="form-control" name="episode" disabled="disabled" value="<?= $edit[0]['episode'] ?>" placeholder="<?= $edit[0]['episode'] ?>"/>
+          </div>
+		  
+		  <div class="form-group select">
+            <label>
+               Episode Type
+            </label>
+            <select type="select" name="episodeType" class="form-control" >
+              <option <?= ($edit[0]['episodeType'] === 'full')?'selected':null;?> value="full">full</option>
+              <option <?= ($edit[0]['episodeType'] === 'trailer')?'selected':null;?> value="trailer">trailer</option>
+              <option <?= ($edit[0]['episodeType'] === 'bonus')?'selected':null;?> value="bonus">bonus</option>
+            </select>
+          </div>
+         
+          <div class="form-group select">
             <label>
                Explicit
             </label>
-            <select type="select" name="explicit" >
+            <select type="select" name="explicit" class="form-control">
               <option <?= ($edit[0]['explicit'] === 'no')?'selected':null;?> value="no">no</option>
               <option <?= ($edit[0]['explicit'] === 'yes')?'selected':null;?> value="yes">yes</option>
             </select>

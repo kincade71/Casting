@@ -46,12 +46,23 @@
             <input type="text" class="form-control" name="episode" value="<?= $episode ?>" placeholder="<?= $episode ?>"/>
             <span class="help-block">Auto Increments Episode by 1 </span> 
           </div>
+          
+          <div class="form-group select">
+            <label>
+               Episode Type
+            </label>
+            <select type="select" name="episodeType" class="form-control" >
+              <option value="full">full</option>
+              <option value="trailer">trailer</option>
+              <option value="bonus">bonus</option>
+            </select>
+          </div>
 
-          <div class="select">
+          <div class="form-group select">
             <label>
                Explicit
             </label>
-            <select type="select" name="explicit" >
+            <select type="select" name="explicit" class="form-control">
               <option value="no">no</option>
               <option value="yes">yes</option>
             </select>
@@ -64,10 +75,10 @@
 
           <div class="form-group">
             <label for="exampleInputFile">Upload New podcast episode here.</label>
-            <input type="file" id="artwork" name="userfile" multiple="multiple" class="">
+            <input type="file" id="artwork" name="userfile" multiple="multiple" class="form-control">
           </div>
 
-          <button type="submit" class="btn btn-default pull-right">Submit</button>
+          <button type="submit" class="btn btn-default btn-lg pull-right">Submit</button>
         </form>
         <br/><br/><br/>
       </div>

@@ -2,7 +2,7 @@
       <hr>
       <div class="container">
       <footer>
-        <p class="pull-right">&copy;<a href="http://<?= $projectname ?>.com" target="_blank"><?= $projectname ?></a> 2015</p>
+        <p class="pull-right">&copy;<a href="http://<?= $projectname ?>.com" target="_blank"><?= $projectname ?></a> 2015 - <?= date('Y') ?></p>
       </footer>
 
     </div><!--/.container-->
